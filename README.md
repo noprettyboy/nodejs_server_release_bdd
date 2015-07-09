@@ -1,0 +1,2 @@
+# nodejs_server_release_bdd
+含有nodejs写的一个服务器以及部署用的一些脚本
