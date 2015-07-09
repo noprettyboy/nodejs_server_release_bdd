@@ -1,0 +1,219 @@
+1:整体监控项数目和报警数目统计
+{
+   level: ['P0','P1','P2','All'],
+   data:[
+      {
+         name: '监控项总数',
+         data: [1, 3, 5, 7]
+
+      }, {
+         name: '报警总量',
+         data: [2, 4, 6, 8]
+
+      }
+   ]
+}
+
+2:各产品线报警数量汇总
+{
+   product: ['KA品专', 'RCV2检索端', '中小品专', '企业百科', '后羿检索端'],
+   data:[
+      {
+	 type: 'column',
+         name: '报警总数',
+         data: [2, 4, 6, 8, 10]
+
+      }, {
+	 type: 'column',
+         name: '已处理报警数',
+         data: [1, 3, 5, 7, 9]
+
+      }, {
+	 type: 'spline',
+         name: '报警处理率',
+         data: [0.95, 0.76, 0.35, 0.0, 0.13]
+
+      }, {
+	 type: 'spline',
+         name: '报警平均处理时间',
+         data: [9.4, 2.6, 3, 6.3, 3.3],
+ 	 tooltip: {
+            valueSuffix: '分钟'
+         }
+      }
+   ]
+}
+
+3:各监控项报警数量汇总(与上面第2条类似)
+{
+   product: ['知识营销CPT死链监控<br>监控级别:p2',
+             '品专物料敏感词监控<br>监控级别:p0',
+             '后羿检索端PV监控<br>监控级别:p1',
+             'PC图片品专展现监控<br>监控级别:p2',
+             'PC图片品专死链监控<br>监控级别:p2',
+             'KA品专PS全量展现监控<br>监控级别:p0',
+             '品牌起跑线分地域展现监控<br>监控级别:p1',
+             '乐居品专展现监控<br>监控级别:p0'],
+   data:[
+      {
+	 type: 'column',
+         name: '报警总数',
+         data: [2, 4, 6, 8, 10, 12, 14, 16]
+
+      }, {
+	 type: 'column',
+         name: '已处理报警数',
+         data: [1, 3, 5, 7, 9, 11, 13, 15]
+
+      }, {
+	 type: 'spline',
+         name: '报警处理率',
+         data: [0.95, 0.76, 0.35, 0.0, 0.13, 0.45, 0.38, 0.98]
+
+      }, {
+	 type: 'spline',
+         name: '报警平均处理时间',
+         data: [9.4, 2.6, 3.7, 6.3, 3.3, 13.5, 2.9, 5.4]
+ 	 tooltip: {
+            valueSuffix: '分钟'
+         }
+      }
+   ]
+}
+4:分产品线分频道分类型分级别报警数量汇总
+option1：以产品线为维度
+
+{
+   xAxis: ['KA品专'],
+   data:[
+      {
+	 type: 'column',
+         name: '报警总数',
+         data: [2]
+
+      }, {
+	 type: 'column',
+         name: '已处理报警数',
+         data: [1]
+
+      }, {
+	 type: 'spline',
+         name: '报警处理率',
+         data: [0.95]
+
+      }, {
+	 type: 'spline',
+         name: '报警平均处理时间',
+         data: [9.4],
+ 	 tooltip: {
+            valueSuffix: '分钟'
+         }
+      }
+   ]
+}
+
+option2: 以频道为维度
+{
+   xAxis: ['PCPS品专'，'无线PS品专'],
+   data:[
+      {
+	 type: 'column',
+         name: '报警总数',
+         data: [2, 4]
+
+      }, {
+	 type: 'column',
+         name: '已处理报警数',
+         data: [1, 3]
+
+      }, {
+	 type: 'spline',
+         name: '报警处理率',
+         data: [0.95, 0.78]
+
+      }, {
+	 type: 'spline',
+         name: '报警平均处理时间',
+         data: [9.4, 6],
+ 	 tooltip: {
+            valueSuffix: '分钟'
+         }
+      }
+   ]
+}
+option3: 以监控类型为维度
+option4: 以监控级别为维度
+
+5: 已有监控项拓扑图
+{
+    rootName: '已有监控项拓扑图',
+    children: [
+        {
+            name: 'KA品专',
+            children: [
+                {
+                     name: 'PCPS品专',
+                     children: [
+                         {
+                             name: '分地点点击跳转监控',
+                             children: [
+                                 {
+                                     name: 'p2',
+                                     children: [
+                                         {
+                                             name: 'KA品专分地域死链监控',
+                                             children: []
+                                         },
+                                        {
+                                              name: 'node11112',
+                                              children: []
+                                        }
+                                     ]
+                                 },
+                                {
+                                    name: 'node1112',
+                                    children: []
+                                }
+                              ]
+                          },
+                          {
+                              name: '广告点击数据指示监控',
+                              children: [
+                                 {
+                                      name: 'p1',
+                                      children: [
+                                         {
+                                             name: '品专物料敏感词监控',
+                                             children: []
+                                         }
+                                      ]
+                                 }
+                              ]
+                          },
+                         {
+                             name: '点击跳转监控',
+                             children: []
+                         }
+                    ]
+               },
+              {
+                    name: 'node12',
+                    children: []
+              }
+         ]
+      },
+      {
+           name: 'node2',
+           children: [
+              {
+                    name: 'node21',
+                    children: []
+              },
+             {
+                   name: 'node22',
+                   children: []
+             }
+           ]
+       }
+    ]
+}

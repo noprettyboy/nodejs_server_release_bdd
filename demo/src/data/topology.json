@@ -1,0 +1,19 @@
+{
+    "name": "flare",
+    "children": [
+        {"source": {"name":"触发信息", "flag":0}, "target":{"name":"adserver", "flag":1}, "type": "suit"},
+        {"source": {"name":"广告信息", "flag":0}, "target":{"name":"adserver", "flag":1}, "type": "suit"},
+        {"source": {"name":"adserver", "flag":1}, "target":{"name":"adserver系统log", "flag":0}, "type": "suit"},
+        {"source": {"name":"adserver", "flag":1}, "target":{"name":"广告数据", "flag":0}, "type": "suit"},
+        {"source": {"name":"adserver", "flag":1}, "target":{"name":"adserver返回数据", "flag":0}, "type": "suit"},
+        {"source": {"name":"adserver返回数据", "flag":0}, "target":{"name":"hyui", "flag":1}, "type": "suit"},
+        {"source": {"name":"hyui", "flag":1}, "target":{"name":"hyui log", "flag":0}, "type": "suit"},
+        {"source": {"name":"hyui", "flag":1}, "target":{"name":"asp返回数据", "flag":0}, "type": "suit"},
+        {"source": {"name":"hyui", "flag":1}, "target":{"name":"hyui请求数据", "flag":0}, "type": "suit"},
+        {"source": {"name":"hyui请求数据", "flag":0}, "target":{"name":"adserver", "flag":1}, "type": "suit"},
+        {"source": {"name":"物料信息", "flag":0}, "target":{"name":"hyui", "flag":1}, "type": "suit"},
+        {"source": {"name":"asp请求数据", "flag":0}, "target":{"name":"hyui", "flag":1}, "type": "suit"},
+        {"source": {"name":"asp返回数据", "flag":0}, "target":{"name":"asp", "flag":1}, "type": "suit"},
+        {"source": {"name":"asp", "flag":1}, "target":{"name":"asp请求数据", "flag":1}, "type": "suit"}
+    ]
+}

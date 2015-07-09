@@ -1,0 +1,110 @@
+{
+    "message": "ok",
+    "success": true,
+    "data": {
+        "monitorList": [
+            {
+                "id": 121,
+                "monitorName": "品专物料敏感词监控",
+                "monitorLevel": 1,
+                "channel": "PCPS品专"
+            },
+            {
+                "id": 122,
+                "monitorName": "KA品专PS全量展现监控",
+                "monitorLevel": 0,
+                "channel": "PCPS品专"
+            },
+            {
+                "id": 124,
+                "monitorName": "KA品专死链监控",
+                "monitorLevel": 2,
+                "channel": "PCPS品专"
+            },
+            {
+                "id": 123,
+                "monitorName": "KA品专PS飘红监控",
+                "monitorLevel": 2,
+                "channel": "PCPS品专"
+            },
+            {
+                "id": 128,
+                "monitorName": "PC新闻品专展现监控",
+                "monitorLevel": 0,
+                "channel": "PC新闻品专"
+            },
+            {
+                "id": 131,
+                "monitorName": "PC图片品专展现监控",
+                "monitorLevel": 0,
+                "channel": "PC图片品专"
+            },
+            {
+                "id": 130,
+                "monitorName": "PC新闻品专死链监控",
+                "monitorLevel": 2,
+                "channel": "PC新闻品专"
+            },
+            {
+                "id": 132,
+                "monitorName": "PC图片品专死链监控",
+                "monitorLevel": 2,
+                "channel": "PC图片品专"
+            },
+            {
+                "id": 133,
+                "monitorName": "PC视频品专展现监控",
+                "monitorLevel": 0,
+                "channel": "PC视频品专"
+            },
+            {
+                "id": 134,
+                "monitorName": "PC视频品专死链监控",
+                "monitorLevel": 2,
+                "channel": "PC视频品专"
+            },
+            {
+                "id": 135,
+                "monitorName": "无线品专展现监控",
+                "monitorLevel": 0,
+                "channel": "无线PS品专"
+            },
+            {
+                "id": 136,
+                "monitorName": "无线品专死链监控",
+                "monitorLevel": 2,
+                "channel": "无线PS品专"
+            },
+            {
+                "id": 137,
+                "monitorName": "PC知道品专展现监控",
+                "monitorLevel": 0,
+                "channel": "PC知道品专"
+            },
+            {
+                "id": 138,
+                "monitorName": "PC知道品专死链监控",
+                "monitorLevel": 2,
+                "channel": "PC知道品专"
+            },
+            {
+                "id": 139,
+                "monitorName": "PC图片品专高级展现监控",
+                "monitorLevel": 0,
+                "channel": "PC图片品专高级"
+            },
+            {
+                "id": 140,
+                "monitorName": "PC图片品专高级死链监控",
+                "monitorLevel": 2,
+                "channel": "PC图片品专高级"
+            },
+            {
+                "id": 163,
+                "monitorName": "乐居品专展现监控12",
+                "monitorLevel": 2,
+                "channel": "PCPS品专"
+            }
+        ]
+    }
+}

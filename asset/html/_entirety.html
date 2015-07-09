@@ -1,0 +1,90 @@
+<div id="entirety">
+    <div class="entirety">
+        <div class="entirety-content">
+            <div class="jumbotron" id="hero">
+                <div class="container-span">
+                    <div class="row1">
+                        <span class="back-description">定制化广告“线上质量”清晰可见</span>
+                    </div>
+                    <div class="row2">
+                        <span class="back-description">线上监控&nbsp;&nbsp;&nbsp;&nbsp;问题闭环&nbsp;&nbsp;&nbsp;&nbsp;监控分析</span>
+                    </div>
+                </div>
+            </div>
+            <div class="alarm_count_notify">
+                <div class="product-status-detail-title">
+                    <span class="score-info">业务线&nbsp;<font>健康度</font>&nbsp;(<span data-toggle="popover" title="<div style='color:#00688b;font-weight:700;font-size:16px;'>评测说明:</div>" data-content="<div style='color:#808080;font-weight:400;font-size:14px;'><div><span style='color:#00688b;'>健康度维度:</span><br>1.影响客户数占比:Custom(VIP + Normal)<br>2.影响PV占比: PV<br>3.影响SLA占比:SLA</div><div><span style='color:#00688b;'>健康度计算公式:</span><br>Health:Score=Custom(%)+PV(%)+SLA(%)</div><div><span style='color:#00688b;'>健康度标准:</span><br>0.1%(好),0.1%-0.5%(中),0.5%-2%(差),2%(严重)</div></div>">?</span>)&nbsp;评测:</span>
+                    <!-- <span class="info">您有&nbsp;<a>{{userInfo.unhandleAlarmCount}}</a>&nbsp;条报警等待处理！</span> -->
+                </div>
+                <div class="product-status-content">
+                    <div class="product-status-detail" ng-repeat="statusItem in loadEntiretyData">
+                        <div class="product-status-item-div" data-toggle="popover" title="" data-content="<div class='popover-div'><div style='color:#00688b;font-weight:bold;'>报警总数:<br></div><div style='color:#808080;'>P0:{{statusItem.p0MonitorCount}}个,&nbsp;&nbsp;P1:{{statusItem.p0MonitorCount}}个,&nbsp;&nbsp;P2:{{statusItem.p0MonitorCount}}个</div></div><div><div style='color:#00688b;font-weight:bold;'>评分细则:</div><div style='color:#808080;'><div>影响客户数占比:{{statusItem.clientRate}}%<br>影响PV占比: {{statusItem.pvRate}}%<br>影响SLA占比:{{statusItem.sla}}%</div><div>健康度:{{statusItem.healthScore}}%</div></div></div>">
+                            <div class="product-status-item-left">{{statusItem.productName}}</div>
+                            <div class="product-status-item-right" ng-class="{'好': 'good-score', '中': 'general-score', '差': 'bad-score', '严重': 'serious-score'}[statusItem.healthInfo]">{{statusItem.healthInfo}}</div>
+                        </div>
+                        <!-- <div class="product-status-outter">
+                            <div class="xxx">
+                                <div>
+                                    <a id="xxx_info{{statusItem.productId}}" name={{statusItem.productName}} value={{statusItem.productId}} score={{statusItem.score}} p0Count={{statusItem.p0MonitorCount}} p1Count={{statusItem.p1MonitorCount}} p2Count={{statusItem.p2MonitorCount}} href="#/alarm/{{statusItem.productId}}/1">{{statusItem.productName}}</a>
+                                </div>
+                            </div>
+                            <div class="yyy">
+                                <div><a id="yyy_score{{statusItem.productId}}">{{statusItem.score}}</a></div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="general-description">
+                <ul class="use_list">
+                    <li>
+                        <div>
+                            <div>
+                                <img src="../img/monitor.png">
+                            </div>
+                            <div class="title-div">
+                                <h2>实时监控</h2>
+                            </div>
+                            <div class="detail-div">
+                                <p>覆盖展现广告所有业务系统、</p>
+                                <p>检索端、基础平台(筹)</p>
+                                <p>提供功能监控、可用性监控、数据监控</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div>
+                                <img src="../img/repair.png">
+                            </div>
+                            <div class="title-div">
+                                <h2>问题闭环</h2>
+                            </div>
+                            <div class="detail-div">
+                                <p>让问题发现到问题处理，有迹可寻</p>
+                                <p>问题分发：责任到人</p>
+                                <p>问题排查：快速定位</p>
+                                <p>典型问题自动修复(筹)</p>
+                            </div>                           
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div>
+                                <img src="../img/report.png">
+                            </div>
+                            <div class="title-div">
+                                <h2>监控分析</h2>
+                            </div>
+                            <div class="detail-div">
+                                <p>问题风险评估系统(筹):线上损失分析、预估</p>
+                                <p>线上top问题分析(筹):产品优化</p>
+                                <p>线上产品质量报告(筹)</p>
+                            </div>                         
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+<div id="monitor_add" style="width: 70%; margin-top: 50px; position: relative" xmlns="http://www.w3.org/1999/html">
+    <img src="img/exit.png" alt="X" width="20px" height="20px" style="position: absolute; top:-10px; right: -10px; cursor: pointer" ng-click="exit()"/>
+    <div class="monitor-add">
+        <awen-panel title="我的权限">
+            <span class="label label-info" style="height: 40px; line-height: 40px; text-align: center; margin-right: 2px" ng-repeat="role in myInfo.roles track by $index">{{role}}</span>
+        </awen-panel>
+
+        <awen-panel title="操作" collapse="collapse">
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th ng-repeat="role in allUsersInfo.roles" style="text-align: center">{{role.name}}</th>
+                </tr>
+                <tr ng-repeat="user in allUsersInfo.users">
+                    <td ng-class="{'user-highlight': myInfo.userId === user.id}">{{user.name}}</td>
+                    <td ng-repeat="r in user.roles" style="text-align: center">
+                        <input type="checkbox" awen-switch ng-model="r.has"/>
+                    </td>
+                </tr>
+            </table>
+        </awen-panel>
+
+        <awen-panel title="我是超级管理员!" collapse="collapse" ng-show="myInfo.isSuper">
+            <table class="table table-condensed" ng-repeat="(id, o) in myInfo.iAmSuper.roles" awen-fade ng-model="o.s">
+                <caption>
+                    <span class="btn btn-danger btn-small btn-circule table-delete" ng-click="myInfo.iAmSuper.click.delRole(id)">X</span>
+                    <span>{{o.n}} ({{id}}: {{o.r}})</span>
+                </caption>
+                <tr>
+                    <th>Id</th>
+                    <th>Resource</th>
+                    <th>ResourceType</th>
+                    <th>Op</th>
+                    <th>Info</th>
+                    <th>操作</th>
+                </tr>
+                <tr ng-repeat="p in o.p" awen-fade ng-model="p.s">
+                    <td>{{p.pId}}</td>
+                    <td>{{p.res}}</td>
+                    <td>{{p.resType}}</td>
+                    <td>{{p.op}}</td>
+                    <td>{{p.info}}</td>
+                    <td><span class="btn btn-danger btn-small btn-circule" ng-click="myInfo.iAmSuper.click.delPermission(id, p.pId)">X</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="text" style="margin-top: 5px" placeholder="添加" ng-model="o.d.res" required/><span class="require-input">*</span></td>
+                    <td><input type="text" style="margin-top: 5px" placeholder="添加" ng-model="o.d.resType" required/><span class="require-input">*</span></td>
+                    <td>
+                        <select style="margin-top: 5px; margin-left: -10px; width: 60px" ng-model="o.d.op.selected" ng-options="pt for pt in o.d.op.options">
+                        </select>
+                    </td>
+                    <td><input type="text" style="margin-top: 5px" placeholder="添加" ng-model="o.d.info"/></td>
+                    <td><span class="btn btn-success btn-small btn-circule" ng-disabled="!o.v" ng-click="myInfo.iAmSuper.click.addPermission(id)">+</span></td>
+
+                </tr>
+            </table>
+            <table class="table table-condensed">
+                <caption>
+                    <span class="btn btn-success btn-small btn-circule table-delete" ng-disabled="!myInfo.iAmSuper.newRole.v" ng-click="myInfo.iAmSuper.click.addRole()">+</span>
+                    <input type="text" style="width: 30%; margin-top: 0px; margin-left: 10px" placeholder="添加新角色.name" ng-model="myInfo.iAmSuper.newRole.name" required/>
+                    <span class="require-input">*</span>
+                    <input type="text" style="width: 30%; margin-top: 0px; margin-left: 10px" placeholder="添加新角色.role" ng-model="myInfo.iAmSuper.newRole.role" required/>
+                    <span class="require-input">*</span>
+                </caption>
+            </table>
+        </awen-panel>
+    </div>
+</div>

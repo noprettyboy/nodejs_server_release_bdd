@@ -1,0 +1,127 @@
+<div id="day_level_pv" ng-controller="pvClickZSYXCPCDayLevelController">
+    <div class="day-level-pv">
+        <div class="day-level-pv-left">
+            <div class="tree-div">
+                <ul class="nav nav-stacked">
+                    <li ng-repeat="product in productsArr" name="item{{product.id}}" pn="{{product.pn}}" value="{{product.id}}" ng-click="switchProduct($event)">
+                        <span class="li-plus">+</span>
+                        <span class="li-minus hidden-fold-flag">-</span>
+                        <span class=".product-item">{{product.name}}</span>
+                        <span class="flag">></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="day-level-pv-right">
+            <div class="top-null-div"></div>
+            <div class="day-level-pv-content">
+                <div id="day_level_search_header" class="search-header" style="border-radius: 3px; vertical-align:middle">
+                    <div class="input-div">
+                        <span class="query-title">PC:</span>
+                        <input type="radio" class="input-form" value="pc" name="dataType" ng-model="dayLevelCondtion.dataType">
+                    </div>
+                    <div class="input-div radio-input-div">
+                        <span class="query-title">无线:</span>
+                        <input type="radio" class="input-form" value="wireless" name="dataType" ng-model="dayLevelCondtion.dataType">
+                    </div>
+                    <div class="input-div text-input-div">
+                        <span class="query-title">QUERY:</span>
+                        <input id="query_text" type="text" class="input-form" ng-model="dayLevelCondtion.query">
+                    </div>
+                    <div class="input-div">
+                        <span class="pv-title">PV:</span>
+                        <input id="pv_text" type="text" class="input-form" placeholder="默认值为>=1" ng-model="dayLevelCondtion.pv">
+                    </div>
+                    <div class="input-div">
+                        <!-- <span class="date-title">选择日期:</span>
+                        <input id="date_text" type="text" class="input-control" awen-date-picker ng-model="queryTime.specifiedDate" /> -->
+                        <span class="date-title">选择对比日期:</span>
+                        <input id="date_text" type="text" />
+                    </div>
+                    <div class="input-div">
+                        <span class="percent-title">当前日期PV值/所选日期PV值(%):</span>
+                        <input id="percent_text" type="text" class="input-form" ng-model="dayLevelCondtion.percent">
+                    </div>
+                    <div class="day-level-pv-search-submit">
+                        <input type="submit" value="查询" class="form-control btn btn-default-style" onfocus="this.blur();" ng-click="searchData()">
+                    </div>
+                </div>
+                <div class="content-body">
+                    <div class="day-level-data-table" id="day_level_pv_data">
+                    </div>
+                    <div class="day-level-table-info">
+                        <button id="pre_page_task" class="btn btn-default" type="button"  ng-click="jumpPage(-1)">
+                            &lt;上一页
+                        </button>
+                        <label class="current-page-no" ng-model="dayLevelInfo.pageIndex" pageindex="{{dayLevelInfo.pageIndex}}">
+                            &nbsp;
+                            <b ng-bind="dayLevelInfo.pageIndex"></b>
+                            &nbsp;
+                        </label>
+                        <button id="next_page_task" class="btn btn-default" type="button" ng-click="jumpPage(1)">
+                            下一页&gt;
+                        </button>
+                        <label class="page-count" totalcount="{{dayLevelInfo.totalPage}}">
+                            共
+                            <b ng-bind="dayLevelInfo.totalPage"></b>
+                            页&nbsp;
+                            <b ng-bind="dayLevelInfo.totalCount"></b>
+                            条&nbsp;&nbsp;&nbsp;
+                        </label>
+                        <div class="page-size">
+                            <select class="number-per-page" id="number_per_page">
+                                <option value="30" selected>30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            <span>条/页</span>
+                        </div>
+                        <div class="col-lg-2 go-div">
+                            <input type="text" class="ng-pristine ng-valid" id="targetPage" ng-model="targetPage" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" ng-click="turnPage(targetPage)">
+                                    Go!
+                                </button>
+                            </span>
+                            <span class="prompt ng-hide" ng-show="targetPage>dayLevelInfo.totalPage">
+                                *输入页数超过总页数！
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-null-div"></div>
+        </div>
+    </div>
+</div>
+
+<div id="line_chart_dialog">
+    <div class="modal fade line-chart-dialog" tabindex="" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">PV统计图</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="condition-div">
+                        <div class="input-div">
+                            <span class="date-title">选择起始日期:</span>
+                            <input id="line_chart_date_text" type="text" />
+                        </div>
+                        <div class="input-div submit-div">
+                            <input type="hidden" id="query_save_text" />
+                            <input type="submit" value="查询" class="form-control btn btn-default-style" onfocus="this.blur();" ng-click="searchQueryData()">
+                        </div>
+                    </div>
+                    <div class="chart-div">
+                        <div id="query_line_Chart"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-default confirm" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

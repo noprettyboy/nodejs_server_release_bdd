@@ -1,0 +1,18 @@
+{
+  "success":true,
+  "message":"ok",
+  "data":[
+    {
+      "id":1,
+      "name":"PCPS品专"
+    },
+    {
+      "id":2,
+      "name":"PC新闻品专"
+    },
+    {
+      "id":3,
+      "name":"无线PS品专"
+    }
+  ]
+}

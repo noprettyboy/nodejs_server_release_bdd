@@ -1,0 +1,155 @@
+.mindmap {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    white-space: nowrap;
+    color: #e05912;
+}
+
+.mindmap:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 0;
+}
+
+.mindmap .node {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    /*border: 1px solid #e05912;*/
+    color: #666666;
+    border: 1px solid #0b0719;
+    padding: 0 4px;
+    margin: 4px 0;
+    background: #fff;
+    border-radius: 2px;
+    text-align: left;
+    cursor: pointer;
+    transition: all .2s;
+    direction: ltr;
+}
+
+.mindmap .first-level {
+    background-color: #fde7dc;
+}
+
+.mindmap .second-level {
+    background-color: #fdece3;
+}
+
+.mindmap .node:hover {
+    box-shadow: 0 0 3px 0 #3498DB;
+}
+
+.mindmap .node_active {
+    background-color: #f28952;
+    border: 1px solid #f28952;
+    color: #fff;
+}
+
+.mindmap .node_root {
+    background-color: #fbdbca;
+    line-height: 20px;
+}
+
+.mindmap .children {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    text-align: left;
+    padding: 0 0 0 6px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mindmap .children:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    width: 10px;
+    /*border-top: 1px solid #FF5809;*/
+    border-top: 1px solid #0b0719;
+}
+
+.mindmap .children__item {
+    position: relative;
+    padding: 0 0 0 10px;
+    /*border-left: 1px solid #FF5809;*/
+    border-left: 1px solid #0b0719;
+}
+
+.mindmap .children__item:first-child,
+.mindmap .children__item:last-child {
+    border-left: 1px solid transparent;
+}
+
+.mindmap .children__item:before {
+    content: '';
+    width: 10px;
+    /*border-top: 1px solid #FF5809;*/
+    border-top: 1px solid #0b0719;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.mindmap .children__item:first-child:before {
+    left: -1px;
+    bottom: 0;
+    border-radius: 4px 0 0 0;
+    /*border-left: 1px solid #FF5809;*/
+    border-left: 1px solid #0b0719;
+}
+
+.mindmap .children__item:last-child:before {
+    left: -1px;
+    top: 0;
+    bottom: 50%;
+    border-radius: 0 0 0 4px;
+    border: 0;
+    /*border-left: 1px solid #FF5809;
+    border-bottom: 1px solid #FF5809;*/
+    border-left: 1px solid #0b0719;
+    border-bottom: 1px solid #0b0719;
+}
+
+.mindmap .children__item:first-child:last-child:before {
+    top: 50%;
+    bottom: auto;
+    border: 0;
+    border-radius: 0;
+    /*border-top: 1px solid #FF5809;*/
+    border-top: 1px solid #0b0719;
+}
+
+/***********************  dimension tree 子菜单***************/
+#tree-menu {
+    background-color: #F0F0F0;
+    position: absolute;
+    width: 80px;
+    border: solid 1px #ADADAD;
+    z-index: 2000;
+}
+
+#tree-menu ul {
+    margin: 0px;
+    display: block;
+    list-style: none;
+}
+
+#tree-menu ul li {
+    padding-left: 10px;
+    line-height: 20px;
+}
+
+#tree-menu ul li:hover {
+    background-color: #66b3e9;
+    color: #fff;
+    cursor: pointer;
+}

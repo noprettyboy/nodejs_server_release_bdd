@@ -1,0 +1,137 @@
+<div id="monitor_edit">
+    <div class="monitor-edit">
+        <div class="monitor-edit-title-div">
+            <span>编辑监控项</span>
+            <span ng-click="goBackMonitor()">X</span>
+        </div>
+        <div class="longLine"></div>
+        <form class="form-add-monitor-data" name="formMonitorEdit" role="form" novalidate>
+            <div class="form-div monitor-name-input">
+                <span class="add-name  dialog-span">监控项名称:</span>
+                <input type="text" name="monitorName" id="add_monitor_name" class="dialog-input"  autocomplete="off" ng-model="monitor.name" required >
+                <span  ng-show="formMonitorEdit.monitorName.$error.required" class="form-error">*必填</span>
+            </div>
+            <div class="form-div monitor-level-input">
+                <span class="add-level  dialog-span">监控级别:</span>
+                <select name="monitorType" ng-model="monitor.type"  class="select-form" id="add_monitor_level" required>
+                    <option value selected="selected">--请选择--</option>
+                    <option value="0">P0</option>
+                    <option value="1">P1</option>
+                    <option value="2">P2</option>
+                </select>
+                <span  ng-show="formMonitorEdit.monitorType.$error.required" class="form-error">*必选</span>
+            </div>
+            <div class="form-div monitor-type-input">
+                <span class="add-type  dialog-span">监控项类型:</span>
+                <input type="radio" name="monitorType" ng-model="monitor.monitorType" radioName="展现监控" value="1" checked="true" style="margin-left:10px;">展现监控</input>
+                <input type="radio" name="monitorType" ng-model="monitor.monitorType" radioName="质量监控" value="2" style="margin-left:10px;">质量监控</input>
+                <input type="radio" name="monitorType" ng-model="monitor.monitorType" radioName="数据监控" value="3" style="margin-left:10px;">数据监控</input>
+            </div>
+            <div class="clear"></div>
+            <div class="form-div show-radio-content">
+                <span class="add-type  dialog-span">监控项子类型:</span>
+                <select name="monitorSubType" ng-model="monitor.subType" class="select-form" id="add_sub_monitor_type" required>
+                    <option value selected="selected">--请选择--</option>
+                    <option ng-repeat="option in subMonitors.subMonitorTypes" value="{{option.id}}">{{option.name}}</option>
+                </select>
+                <span  ng-show="formMonitorEdit.monitorSubType.$error.required" class="form-error">*必选</span>
+            </div>
+            <div class="form-div monitor-channel-input">
+                <span class="channel  dialog-span">频道:</span>
+                <select  name="monitorChannel" ng-model="monitor.channel" class="select-form" id="add_channel" required>
+                    <option value selected="selected">--请选择--</option>
+                    <option ng-repeat="addMonitorChannelItem in monitorChannels" value={{addMonitorChannelItem.name}} name={{addMonitorChannelItem.name}}>{{addMonitorChannelItem.name}}</option>
+                </select>
+                <span  ng-show="formMonitorEdit.monitorChannel.$error.required" class="form-error">*必选</span>
+            </div>
+            <div class="form-div monitor-period-input">
+                <span class="period  dialog-span">监控周期(分):</span>
+                <input type="text" id="add_period" name="monitorPeriod" ng-model="monitor.period" class="dialog-input"  autocomplete="off" required>
+                <span  ng-show="formMonitorEdit.monitorPeriod.$error.required" class="form-error">*必填</span>
+            </div>
+            <div class="form-div monitor-timeout-input">
+                <span  class="time-out  dialog-span">超时时间(分):</span>
+                <input  type="text" name="monitorOverTime" ng-model="monitor.overTime" id="add_time_out" class="dialog-input" autocomplete="off" required/>
+                <span  ng-show="formMonitorEdit.monitorOverTime.$error.required" class="form-error">*必填</span>
+            </div>
+            <div class="form-div monitor-script-path">
+                <span class="script-path  dialog-span">脚本路径:</span>
+                <input  type="text" name="monitorScriptPath" ng-model="monitor.scriptPath" id="add_script_path" class="dialog-input" autocomplete="off" required/>
+                <span  ng-show="formMonitorEdit.monitorScriptPath.$error.required" class="form-error">*必填</span>
+            </div>
+            <div class="form-div monitor-api-url">
+                <span class="api-url  dialog-span">api地址:</span>
+                <input type="url" name="monitorApiUrl" ng-model="monitor.apiUrl" id="add_api_url" class="dialog-input" autocomplete="off" required/>
+                <span  ng-show="formMonitorEdit.monitorApiUrl.$error.required" class="form-error">*必填</span>
+                <span  ng-show="formMonitorEdit.monitorApiUrl.$error.url" class="form-error">*url格式不正确</span>
+            </div>
+            <div class="shortLine"></div>
+            <div class="form-div monitor-charge-input">
+                <span class="add-name  dialog-span">第一跟进人邮箱:</span>
+                <input type="email" name="monitorFirstChargeName" ng-model="monitor.firstChargeName" id="add_first_charge_name" class="dialog-input"  autocomplete="off" required/>
+                <span  ng-show="formMonitorEdit.monitorFirstChargeName.$error.required" class="form-error">*至少有一位跟进人</span>
+                <span  ng-show="formMonitorEdit.monitorFirstChargeName.$error.email" class="form-error">*邮箱地址不正确</span>
+            </div>
+            <div class="form-div monitor-charge-input">
+                <span class="add-name  dialog-span">第一跟进人电话:</span>
+                <input type="tel" name="monitorFirstChargeNo" ng-model="monitor.firstChargeNo" id="add_first_charge_no" class="dialog-input"  autocomplete="off" required>
+                <span  ng-show="formMonitorEdit.monitorFirstChargeNo.$error.required" class="form-error">*至少有一位跟进人</span>
+            </div>
+            <div class="form-div monitor-charge-input">
+                <span class="add-name  dialog-span">第二跟进人邮箱:</span>
+                <input type="email" name="monitorSecondChargeName" ng-model="monitor.secondChargeName" id="add_second_charge_name" class="dialog-input"  autocomplete="off">
+                <span  ng-show="formMonitorEdit.monitorSecondChargeName.$error.email" class="form-error">*邮箱地址不正确</span>
+            </div>
+            <div class="form-div monitor-charge-input">
+                <span class="add-name  dialog-span">第二跟进人电话:</span>
+                <input type="tel"  id="add_second_charge_no" ng-model="monitor.secondChargeNo" class="dialog-input"  autocomplete="off">
+            </div>
+            <div class="form-div monitor-charge-input">
+                <span class="add-name  dialog-span">第三跟进人邮箱:</span>
+                <input type="email" name="monitorThirdChargeName" ng-model="monitor.thirdChargeName" id="add_third_charge_name" class="dialog-input"  autocomplete="off">
+                <span  ng-show="formMonitorEdit.monitorThirdChargeName.$error.email" class="form-error">*邮箱地址不正确</span>
+            </div>
+            <div class="form-div monitor-charge-input">
+                <span class="add-name  dialog-span">第三跟进人电话:</span>
+                <input type="tel"  id="add_third_charge_no" ng-model="monitor.thirdChargeNo" class="dialog-input"  autocomplete="off">
+            </div>
+            <div class="form-div monitor-charge-input">
+                <span class="add-name  dialog-span">第四跟进人邮箱:</span>
+                <input type="email" name="monitorFourthChargeName" ng-model="monitor.fourthChargeName" id="add_fourth_charge_name" class="dialog-input"  autocomplete="off">
+                <span  ng-show="formMonitorEdit.monitorFourthChargeName.$error.email" class="form-error">*邮箱地址不正确</span>
+            </div>
+            <div class="form-div monitor-charge-input">
+                <span class="add-name  dialog-span">第四跟进人电话:</span>
+                <input type="tel" id="add_fourth_charge_no" ng-model="monitor.fourthChargeNo" class="dialog-input"  autocomplete="off">
+            </div>
+            <div class="form-div monitor-extra-email">
+                <span class="add-name  dialog-span">关注人邮箱:</span>
+                <input type="text" name="monitorExtraChargeName" ng-model="monitor.extraChargeName" id="add_extra_email_list" class="dialog-input"  autocomplete="off">
+                <!-- <span  ng-show="formMonitorEdit.monitorExtraChargeName.$error.email" class="form-error">*邮箱地址不正确</span> -->
+            </div>
+            <div class="form-div add-monitor-msn-level">
+                <span class="span-add-monitor-msn-level  dialog-span">短信提醒条件:</span>
+                <!-- <div class="radio-add-monitor-msn-level dialog-radio" id="radio_add_monitor_msn_level"> -->
+                    <input type="radio" name="msn-level" value="2" ng-model="monitor.telephoneLimit" checked="true" style="margin-left:10px;">监控失败</input>
+                    <input type="radio" name="msn-level" value="1" ng-model="monitor.telephoneLimit" style="margin-left:10px;">监控成功</input>
+                    <input type="radio" name="msn-level" value="0" ng-model="monitor.telephoneLimit" style="margin-left:10px;">全部</input>
+                    <input type="radio" name="msn-level" value="3" ng-model="monitor.telephoneLimit" style="margin-left:10px;">不发送</input>
+                <!-- </div> -->
+            </div>
+            <div class="form-div add-monitor-mail-level">
+                <span class="span-add-monitor-mail-level  dialog-span">邮件提醒条件:</span>
+                <!-- <div class="radio-add-monitor-mail-level dialog-radio" id="radio_add_monitor_mail_level"> -->
+                    <input type="radio" name="mail-level" value="2" ng-model="monitor.emailLimit" checked="true" style="margin-left:10px;">监控失败</input>
+                    <input type="radio" name="mail-level" value="1" ng-model="monitor.emailLimit" style="margin-left:10px;">监控成功</input>
+                    <input type="radio" name="mail-level" value="0" ng-model="monitor.emailLimit" style="margin-left:10px;">全部</input>
+                    <input type="radio" name="mail-level" value="3" ng-model="monitor.emailLimit" style="margin-left:10px;">不发送</input>
+                <!-- </div> -->
+            </div>
+            <div class="longLine"></div>
+            <div class="form-div monitor-edit-btn-div">
+                <button type="button" class="btn btn-sm btn-default cancel" ng-click="goBackMonitor()">取消</button>
+                <button type="button" class="btn btn-sm btn-default confirm" ng-click="saveMonitorItem()" ng-disabled="formMonitorEdit.$invalid">提交</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+{
+    "message": "ok",
+    "success": true,
+    "data": {
+        "alarm": {
+            "items": [
+                {
+                    "key": "监控名称",
+                    "value": "PC知道品专死链监控"
+                },
+                {
+                    "key": "关键词",
+                    "value": "安信贷"
+                },
+                {
+                    "key": "广告id",
+                    "value": "916231"
+                },
+                {
+                    "key": "广告主名称",
+                    "value": "君安信(北京)科技有限公司_AD_8229"
+                },
+                {
+                    "key": "物料id",
+                    "value": "418110372"
+                },
+                {
+                    "key": "合同号",
+                    "value": "89154"
+                },
+                {
+                    "key": "一级行业",
+                    "value": "金融"
+                },
+                {
+                    "key": "二级行业",
+                    "value": "金融-其他"
+                },
+                {
+                    "key": "代理商",
+                    "value": "3005910"
+                },
+                {
+                    "key": "销售助理",
+                    "value": "宋洁"
+                },
+                {
+                    "key": "销售助理邮箱",
+                    "value": "songjie@baidu.com"
+                }
+            ],
+            "id": 8781,
+            "subMonitorType": "点击跳转监控",
+            "monitorLevel": 2,
+            "date": "2015-05-11 11:26:58",
+            "channel": "PC知道品专",
+            "status": 0,
+            "monitorId": 138,
+            "monitorName": "PC知道品专死链监控",
+            "monitorType": "展现监控",
+            "productId": 1,
+            "productName": "KA品专",
+            "query": "安信贷",
+            "alarmCount": 20,
+            "healthEffect": "12%",
+            "healthEffectInfo": "p0:12,p1:12,p3:12,p4:12",
+            "reason": "[如何查看安心贷运营数据？:http://www.anxin.com/index/x_opendata.html]没找到页面<br>null<br><br>MVP详情：http://mvp.baidu.com/#/detail/52280110<br>"
+        }
+    }
+}

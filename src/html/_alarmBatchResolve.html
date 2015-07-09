@@ -1,0 +1,39 @@
+<div id="alarm_batch_resolve">
+    <div class="alarm-batch-resolve">
+        <div class="alarm-batch-resolve-title-div">
+            <span>报警批量处理</span>
+            <span ng-click="goBackAlarm()">X</span>
+        </div>
+        <div class="long-line"></div>
+        <form class="form-alarm-batch-resolve">
+            <div class="batch-resolve-time-line">
+                <ul class="timeline">
+                    <li class="click-li alt" ng-repeat="resolveItem in alarmBatchResolveInfo.handleProcess">
+                        <div class="content">
+                            <div class="detail-content">
+                                <div class="alarm-type">
+                                    <span>报警原因类型:</span>
+                                    <select name="alarmType" class="select-form">
+                                        <option value="" selected="selected">--请选择--</option>
+                                        <option ng-repeat="option in alarmBatchResolveInfo.alarmReasonList" value="{{option.id}}">{{option.alarmReason}}</option>
+                                    </select>
+                                </div>
+                                <div class="resolve-info">
+                                    <span>处理过程:</span>
+                                    <textarea class="resolve-info-input" placeholder="请详细输入处理过程" tabindex="5"></textarea>
+                                </div>
+                                <div class="resolve-action">
+                                    <button name="submit" type="submit" class="close-alarm" ng-click="closeAlarm()">关闭报警</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="long-line"></div>
+            <div class="alarm-batch-resolve-btn-div">
+                <button type="button" class="btn btn-sm btn-default cancel" ng-click="goBackAlarm()">取消</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+    "name": "flare",
+    "children": [
+        {
+            "name": "稳定性",
+            "size": 9,
+            "weight": 0.5
+        },
+        {
+            "name": "安全性",
+            "size": 6,
+            "weight": 0.3
+        },
+        {
+            "name": "实时性",
+            "size": 8,
+            "weight": 0.1
+        },
+        {
+            "name": "交互性",
+            "size": 3,
+            "weight": 0.1
+        }
+    ]
+}

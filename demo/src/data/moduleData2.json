@@ -1,0 +1,516 @@
+{
+    "name": "flare",
+    "children": [
+        {
+            "name": "广告信息",
+            "size":9.2,
+            "children": [
+                {
+                    "name": "时效性",
+                    "size": 8,
+                    "weight": 0.4
+                },
+                {
+                    "name": "完备性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name": "冗余性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name": "正确性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name": "一致性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "稳定性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "易用性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "逻辑耦合性",
+                    "size": 0,
+                    "weight": 0
+                }
+            ]
+        },
+        {
+            "name": "触发信息",
+            "size":9.2,
+            "children": [
+                {
+                    "name": "时效性",
+                    "size": 8,
+                    "weight": 0.4
+                },
+                {
+                    "name": "完备性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name": "冗余性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name": "正确性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name": "一致性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "稳定性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "易用性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "逻辑耦合性",
+                    "size": 0,
+                    "weight": 0
+                }
+            ]
+        },
+        {
+            "name": "adserver log",
+            "size":10,
+            "children": [
+                {
+                    "name": "一致性",
+                    "size": 10,
+                    "weight": 0.6
+                },
+                {
+                    "name": "完备性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name": "冗余性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name":"时效性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name":"正确性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name": "稳定性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "易用性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "逻辑耦合性",
+                    "size": 0,
+                    "weight": 0
+                }
+            ]
+        },
+        {
+            "name": "广告库（内存）",
+            "size":9.2,
+            "children": [
+                {
+                    "name": "时效性",
+                    "size": 8,
+                    "weight": 0.4
+                },
+                {
+                    "name": "完备性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name": "冗余性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name": "正确性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name":"时效性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name":"一致性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name": "稳定性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "易用性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "逻辑耦合性",
+                    "size": 0,
+                    "weight": 0
+                }
+            ]
+        },
+        {
+            "name": "hyui log",
+            "size":10,
+            "children": [
+                {
+                    "name": "一致性",
+                    "size": 10,
+                    "weight": 0.6
+                },
+                {
+                    "name": "完备性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name": "正确性",
+                    "size": 10,
+                    "weight": 0.2
+                },
+                {
+                    "name":"时效性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name":"冗余性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name": "稳定性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "易用性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "逻辑耦合性",
+                    "size": 0,
+                    "weight": 0
+                }
+            ]
+        },
+        {
+            "name": "hyui请求adserver",
+            "size":10,
+            "children": [
+                {
+                    "name": "完备性",
+                    "size": 10,
+                    "weight": 0.4
+                },
+                {
+                    "name": "正确性",
+                    "size": 10,
+                    "weight": 0.3
+                },
+                {
+                    "name": "时效性",
+                    "size": 10,
+                    "weight": 0.3
+                },
+                {
+                    "name":"一致性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name":"冗余性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name": "稳定性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "易用性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "逻辑耦合性",
+                    "size": 0,
+                    "weight": 0
+                }
+            ]
+        },
+        {
+            "name": "adserver返回hyui",
+            "size":10,
+            "children": [
+                {
+                    "name": "完备性",
+                    "size": 10,
+                    "weight": 0.4
+                },
+                {
+                    "name": "正确性",
+                    "size": 10,
+                    "weight": 0.3
+                },
+                {
+                    "name": "时效性",
+                    "size": 10,
+                    "weight": 0.3
+                },
+                {
+                    "name":"一致性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name":"冗余性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name": "稳定性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "易用性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "逻辑耦合性",
+                    "size": 0,
+                    "weight": 0
+                }
+            ]
+        },
+        {
+            "name": "物料信息",
+            "size":10,
+            "children": [
+                {
+                    "name": "完备性",
+                    "size": 10,
+                    "weight": 0.3
+                },
+                {
+                    "name": "正确性",
+                    "size": 10,
+                    "weight": 0.3
+                },
+                {
+                    "name": "时效性",
+                    "size": 10,
+                    "weight": 0.4
+                },
+                {
+                    "name":"一致性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name":"冗余性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name": "稳定性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "易用性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "逻辑耦合性",
+                    "size": 0,
+                    "weight": 0
+                }
+            ]
+        },
+        {
+            "name": "asp请求hyui",
+            "size":10,
+            "children": [
+                {
+                    "name": "完备性",
+                    "size": 10,
+                    "weight": 0.4
+                },
+                {
+                    "name": "正确性",
+                    "size": 10,
+                    "weight": 0.3
+                },
+                {
+                    "name": "时效性",
+                    "size": 10,
+                    "weight": 0.3
+                },
+                {
+                    "name":"一致性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name":"冗余性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name": "稳定性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "易用性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "逻辑耦合性",
+                    "size": 0,
+                    "weight": 0
+                }
+            ]
+        },
+        {
+            "name": "hyui返回asp",
+            "size":10,
+            "children": [
+                {
+                    "name": "完备性",
+                    "size": 10,
+                    "weight": 0.4
+                },
+                {
+                    "name": "正确性",
+                    "size": 10,
+                    "weight": 0.3
+                },
+                {
+                    "name": "时效性",
+                    "size": 10,
+                    "weight": 0.3
+                },
+                {
+                    "name":"一致性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name":"冗余性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name": "稳定性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "易用性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "逻辑耦合性",
+                    "size": 0,
+                    "weight": 0
+                }
+            ]
+        },
+        {
+            "name": "asp",
+            "size":10,
+            "children": [
+                {
+                    "name": "完备性",
+                    "size": 10,
+                    "weight": 0.7
+                },
+                {
+                    "name": "正确性",
+                    "size": 10,
+                    "weight": 0.3
+                },
+                {
+                    "name":"一致性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name":"时效性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name":"冗余性",
+                    "size":0,
+                    "weight":0
+                },
+                {
+                    "name": "稳定性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "易用性",
+                    "size": 0,
+                    "weight": 0
+                },
+                {
+                    "name": "逻辑耦合性",
+                    "size": 0,
+                    "weight": 0
+                }
+            ]
+        }
+    ]
+}

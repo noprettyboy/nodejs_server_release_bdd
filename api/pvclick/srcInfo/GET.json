@@ -1,0 +1,25 @@
+{
+    "message": "ok",
+    "success": true,
+    "data": {
+        "info": [
+            {
+                "description": "大搜左侧",
+                "srcId": 119
+            },
+            {
+                "description": "大搜右侧",
+                "srcId": 120
+            },
+            {
+                "description": "xyz",
+                "srcId": 123
+            },
+            {
+                "description": "****",
+                "srcId": 0
+            }
+        ]
+    }
+}
+

@@ -1,0 +1,321 @@
+/**
+ * @file: permissionController
+ * @author: wenghanyi
+ */
+
+app.controller('permissionController', ['$scope', '$route', '$routeParams', '$location', 'httpTemplate', 'CONFIG',
+    function ($scope, $route, $routeParams, $location, httpTemplate, CONFIG) {
+
+        $('div#header ul.nav li').removeClass('current-li');
+
+        $scope.exit = function () {
+            // $location.path($routeParams.backLoc.replace(/-/g, '/'));
+            // $location.state();
+            $location.path('/');
+        };
+
+
+        /////////////////////////////////////////////////////////////////////
+        // user Model
+        var myInfo = {};
+        var allUsersInfo = {};
+
+        // get myInfo first
+        httpTemplate('GET', CONFIG.user, {}, function (res) {
+
+            // ---
+            // model myInfo
+            // ---
+
+            myInfo.userId    = res.data.id;
+            myInfo.userName  = res.data.name;
+
+            // binding as once as done
+            $scope.myInfo = myInfo;
+        })
+        .then(function () {
+            return httpTemplate('GET', CONFIG.userAdmin, {}, function (res) {
+
+                // ---
+                // model allUsersInfo
+                // ---
+                (function () {
+
+                    // construct allUsersInfo.roles
+                    allUsersInfo.roles = res.data.roles;
+
+                    // construct allUsersInfo.users
+                    allUsersInfo.users = [];
+                    res.data.users.forEach(function (user) {
+                        var u = {
+                            id: user.userId,
+                            name: user.userName,
+                            roles: []
+                        };
+
+                        allUsersInfo.roles.forEach(function (role) {
+                            var match = false;
+                            if (user.roles.findObjItemByKey('roleId', role.id)) {
+                                match = true;
+                            }
+                            u.roles.push({id: role.id, has: match, needUp: true});
+                        });
+
+                        // always put current user info (got from myInfo) into the first one
+                        if (u.id === myInfo.userId) {
+                            allUsersInfo.users.unshift(u);
+                        }
+                        else {
+                            allUsersInfo.users.push(u);
+                        }
+                    });
+
+                    // binding allUsersInfo model here:
+                    $scope.allUsersInfo = allUsersInfo;
+                } ());
+
+
+                // ---
+                // model myInfo (continue for permission part)
+                // ---
+                (function () {
+                    var permissions = res.data.permissions;
+                    if (permissions.length) {
+
+                        myInfo.isSuper = true;
+
+                        // construct myInfo.iAmSuper
+                        myInfo.iAmSuper = {};
+
+                        // iAmSuper.roles
+                        myInfo.iAmSuper.roles = {};
+                        permissions.forEach(function (o) {
+                            if (!myInfo.iAmSuper.roles.hasOwnProperty(o.roleId)) {
+                                var roleName = 'Unkown';
+                                var roleR = 'Unkown';
+                                var r = allUsersInfo.roles.findObjItemByKey('id', o.roleId);
+                                if (r) {
+                                    roleName = r[0].name;
+                                    roleR = r[0].role;
+                                }
+                                var roleObj = {
+                                    n: roleName,
+                                    r: roleR,
+                                    p: [],
+                                    d: {
+                                        info: '',
+                                        res: '',
+                                        resType: '',
+                                        op: {
+                                            selected: 'r',
+                                            options: ['c', 'r', 'u', 'd']
+                                        }
+                                    },
+                                    v: false,
+                                    s: true
+                                };
+
+                                $scope.$watch(
+                                    function () {
+                                        if (roleObj.d.res && roleObj.d.resType) {
+                                            roleObj.v = true;
+                                        }
+                                        else {
+                                            roleObj.v = false;
+                                        }
+                                    }
+                                );
+
+                                myInfo.iAmSuper.roles[o.roleId] = roleObj;
+                            }
+
+                            myInfo.iAmSuper.roles[o.roleId].p.push({
+                                pId: o.id,
+                                info: o.info,
+                                op: o.op,
+                                res: o.resource,
+                                resType: o.resourceType,
+                                s: true
+                            });
+                        });
+
+                        // iAmSuper.newRole
+                        myInfo.iAmSuper.newRole = {};
+                        $scope.$watch(function() {
+                            if (myInfo.iAmSuper.newRole.name && myInfo.iAmSuper.newRole.role) {
+                                myInfo.iAmSuper.newRole.v = true;
+                            }
+                            else {
+                                myInfo.iAmSuper.newRole.v = false;
+                            }
+                        });
+
+                        // iAmSuper.click
+                        myInfo.iAmSuper.click = {
+                            delRole: function (roleId) {
+                                console.log('roleId = ' + roleId + ' will be deleted.');
+                                myInfo.iAmSuper.roles[roleId].s = false;
+                                httpTemplate('DELETE', CONFIG.userAdminRole, {roleId: roleId},
+                                    function (res) {
+                                        console.log('Delete done!');
+
+                                        delete myInfo.iAmSuper.roles[roleId];
+
+                                        // TODO:
+                                        //   1. update myInfo.iAmSuper.roles -- [done]
+                                        //   2. update allUsersInfo
+                                        //   3. how about $watch part ...
+                                        // FIXME:
+                                        $route.reload();
+                                    },
+                                    function () {
+                                        myInfo.iAmSuper.roles[roleId].s = true;
+                                    }
+                                );
+                            },
+                            delPermission: function (roleId, permissionId) {
+                                console.log('permissionId = ' + permissionId + ' will be deleted.');
+                                var pArr = myInfo.iAmSuper.roles[roleId].p;
+                                var pO   = pArr.findObjItemByKey('pId', permissionId);
+                                if (pO) {
+                                    pO[0].s = false;
+                                }
+                                httpTemplate('DELETE', CONFIG.userAdminPermission, {permissionId: permissionId},
+                                    function (res) {
+                                        console.log('Delete done!');
+
+                                        if (pO) {
+                                            pArr.splice(pO[1], 1);
+                                        }
+
+                                        // TODO:
+                                        //   1. update myInfo.iAmSuper.roles -- [done]
+                                        // FIXME:
+                                        $route.reload();
+                                    },
+                                    function () {
+                                        if (pO) {
+                                            pO[0].s = true;
+                                        }
+                                    }
+                                );
+                            },
+                            addRole: function () {
+                                var v = myInfo.iAmSuper.newRole.v;
+                                var name = myInfo.iAmSuper.newRole.name;
+                                var role = myInfo.iAmSuper.newRole.role;
+                                if (v) {
+                                    console.log('A new role will be added, detail info: ');
+                                    console.log('name = ' + name + ', role = ' + role);
+
+                                    httpTemplate('POST', CONFIG.userAdminRole,
+                                        {name: name,
+                                         role: role},
+                                        function (res) {
+                                            console.log('Add done');
+
+                                            // TODO:
+                                            //   1. update myInfo.iAmSuper.roles -- [no roleId !]
+                                            //   2. update allUsersInfo
+                                            //   3. how about $watch part ...
+                                            // FIXME:
+                                            $route.reload();
+                                        }
+                                    )
+                                }
+
+                            },
+                            addPermission: function (roleId) {
+                                var data = myInfo.iAmSuper.roles[roleId].d;
+                                var v = myInfo.iAmSuper.roles[roleId].v;
+                                if (v) {
+                                    console.log('A new permission will be added under roleId = ' + roleId + ', detail info: ');
+                                    console.log(data);
+
+                                    httpTemplate('POST', CONFIG.userAdminPermission,
+                                        {
+                                            roleId: roleId,
+                                            resource: data.res,
+                                            resourceType: data.resType,
+                                            op: data.op.selected,
+                                            info: data.info},
+                                        function (res) {
+                                            console.log('Add done');
+
+                                            // TODO:
+                                            //   1. update myInfo.iAmSuper.roles -- [no permissionId !]
+                                            // FIXME:
+                                            $route.reload();
+                                        }
+                                    )
+                                }
+                            }
+                        };
+                    }
+                    else {
+                        myInfo.isSuper = false;
+                    }
+                } ());
+            });
+        })
+        .then(function () {
+
+            // watch allUsersInfo model changing
+            allUsersInfo.users.forEach(function (user) {
+                var userId = user.id;
+                user.roles.forEach(function (role) {
+                    var roleId = role.id;
+                    $scope.$watch(
+                        function () {
+                            return role.has;
+                        },
+                        function (newValue, oldValue) {
+                            if (newValue !== oldValue && role.needUp) {
+                                console.log('changed: ' + userId + ' - ' + roleId + ' (' + newValue + ')');
+                                if (newValue) {
+                                    httpTemplate('POST', CONFIG.userAdmin,
+                                        {users: userId,
+                                         roles: roleId},
+                                        null,
+                                        function () {
+                                            role.has    = oldValue;
+                                            role.needUp = false;
+                                        }
+
+                                    );
+                                }
+                                else {
+                                    httpTemplate('DELETE', CONFIG.userAdmin,
+                                        {userId: userId,
+                                         roleId: roleId},
+                                        null,
+                                        function () {
+                                            role.has = oldValue;
+                                            role.needUp = false;
+                                        }
+                                    );
+                                }
+                            }
+                            else {
+                                role.needUp = true;
+                            }
+
+                            // updating myInfo
+                            if (myInfo.userId === userId) {
+                                myInfo.roles = [];
+                                var roleMapping  = user.roles;
+                                var roleInstance = allUsersInfo.roles;
+                                var rlen = roleMapping.length;
+                                for (var k = 0; k < rlen; k++) {
+                                    if (roleMapping[k].has) {
+                                        myInfo.roles.push(roleInstance[k].name);
+                                    }
+                                }
+                            }
+                        }
+                    );
+                });
+            });
+        });
+    }
+]);

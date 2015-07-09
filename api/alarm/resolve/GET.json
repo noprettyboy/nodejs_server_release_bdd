@@ -1,0 +1,65 @@
+{
+  "message": "ok",
+  "success": true,
+  "data": {
+    "handleProcess": [
+      {
+        "alarmId": 1,
+        "handleAdvice": "请第二跟进人处理",
+        "alarmReasonId": 1,
+        "handleMan": "guijunfei<br>zhujiawei",
+        "handleTime": "2015-03-31 13:58:20",
+        "id": 1,
+        "status": 1,
+        "flag": 0
+      },
+      {
+        "alarmId": 1,
+        "handleAdvice": "请第三跟进人处理",
+        "alarmReasonId": 2,
+        "handleMan": "zhujiawei",
+        "handleTime": "2015-03-31 13:58:46",
+        "id": 2,
+        "status": 1,
+        "flag": 1
+      },
+      {
+        "alarmId": 1,
+        "handleAdvice": "",
+        "alarmReasonId": "jeshu",
+        "handleMan": "chenlu08",
+        "handleTime": "2015-03-31 13:58:20",
+        "id": 3,
+        "status": 2,
+        "flag": 0
+      },
+      {
+        "alarmId": 1,
+        "handleAdvice": "",
+        "alarmReasonId": "",
+        "handleMan": "zhangzenwei",
+        "handleTime": "2015-03-31 13:58:20",
+        "id": 4,
+        "status": 0,
+        "flag": 0
+      }
+    ],
+    "alarmReasonList": [
+        {
+            "alarmReason": "物料已下线",
+            "id": 1
+        },
+        {
+            "alarmReason": "产品线系统问题",
+            "id": 2
+        },
+        {
+            "alarmReason": "外部服务问题",
+            "id": 3
+        }
+    ],
+    "handleResult": {
+        "alarmStatus": 2
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+    "message": "ok",
+    "success": true,
+    "data": {
+        "productStatusDates": [
+            {
+                "clientRate": 0,
+                "healthInfo": "\u597d",
+                "p0MonitorCount": 1134,
+                "p1MonitorCount": 0,
+                "p2MonitorCount": 0,
+                "productId": 14,
+                "productName": "商业阿拉丁",
+                "pvRate": 0,
+                "score": 0,
+                "healthScore": 0,
+                "sla": 0
+            },
+            {
+                "clientRate": 0,
+                "healthInfo": "中",
+                "p0MonitorCount": 264,
+                "p1MonitorCount": 9,
+                "p2MonitorCount": 3744,
+                "productId": 1,
+                "productName": "KA品专",
+                "pvRate": 133900,
+                "score": 0,
+                "healthScore": 10,
+                "sla": 0
+            },
+            {
+                "clientRate": 0,
+                "healthInfo": "差",
+                "p0MonitorCount": 0,
+                "p1MonitorCount": 0,
+                "p2MonitorCount": 3,
+                "productId": 16,
+                "productName": "知识营销CPC",
+                "pvRate": 0,
+                "score": 99,
+                "sla": 0
+            },
+            {
+                "clientRate": 0,
+                "healthInfo": "严重",
+                "p0MonitorCount": 0,
+                "p1MonitorCount": 0,
+                "p2MonitorCount": 3,
+                "productId": 5,
+                "productName": "知识营销CPT",
+                "pvRate": 0,
+                "score": 99,
+                "sla": 0
+            },
+            {
+                "clientRate": 0,
+                "healthInfo": "\u597d",
+                "p0MonitorCount": 0,
+                "p1MonitorCount": 0,
+                "p2MonitorCount": 3,
+                "productId": 4,
+                "productName": "品牌起跑线",
+                "pvRate": 0,
+                "score": 99,
+                "sla": 0
+            },
+            {
+                "clientRate": 0,
+                "healthInfo": "\u597d",
+                "p0MonitorCount": 0,
+                "p1MonitorCount": 0,
+                "p2MonitorCount": 3,
+                "productId": 2,
+                "productName": "中小品专",
+                "pvRate": 0,
+                "score": 99,
+                "sla": 0
+            },
+            {
+                "clientRate": 0,
+                "healthInfo": "\u597d",
+                "p0MonitorCount": 0,
+                "p1MonitorCount": 0,
+                "p2MonitorCount": 0,
+                "productId": 15,
+                "productName": "智能品专",
+                "pvRate": 0,
+                "score": 100,
+                "sla": 0
+            },
+            {
+                "clientRate": 0,
+                "healthInfo": "\u597d",
+                "p0MonitorCount": 0,
+                "p1MonitorCount": 0,
+                "p2MonitorCount": 0,
+                "productId": 9,
+                "productName": "后羿检索端",
+                "pvRate": 0,
+                "score": 100,
+                "sla": 0
+            },
+            {
+                "clientRate": 0,
+                "healthInfo": "\u597d",
+                "p0MonitorCount": 0,
+                "p1MonitorCount": 0,
+                "p2MonitorCount": 0,
+                "productId": 8,
+                "productName": "企业百科",
+                "pvRate": 0,
+                "score": 100,
+                "sla": 0
+            }
+        ]
+    }
+}

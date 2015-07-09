@@ -1,0 +1,258 @@
+
+html,body{
+    height: 100%;
+}
+body {
+	background-color: #ffffff;
+    font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666666;
+    font-weight: 500;
+    width:100%;
+}
+a{
+	text-decoration: none !important;
+	cursor: pointer !important;
+}
+label{
+    display: inline-block !important;
+	cursor: default !important;
+}
+
+/* _index css begin */
+/* test */
+div.test-div .line{
+    fill: none;
+    stroke: #666;
+    stroke-width: 2px;
+}
+div.test-div rect.tips-border{
+  fill:red;
+  stroke: blue;
+  stroke-width: 1.5px;
+}
+
+/* system chart*/
+label.level-label{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+div#system_chart{
+  
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+div#system_chart svg{
+  border:solid 1px black;
+}
+div#system_chart text {
+    font: 10px sans-serif;
+}
+
+div#system_chart rect.background {
+    fill: white;
+}
+
+div#system_chart g.axis {
+    shape-rendering: crispEdges;
+}
+
+div#system_chart g.axis path,
+div#system_chart g.axis line {
+    fill: none;
+    stroke: #000;
+    /*stroke-width: 1.5px;*/
+}
+
+/* module left chart */
+.v-bar{
+  background-color: red;
+  /*display: inline-block;*/
+}
+.baseline{
+  height: 5px;
+  background-color: blue;
+}
+.test-div4{
+  width: 800px;
+  height: 500px;
+}
+.fixed-cell{
+  position: relative;
+  height: 30px;
+  width: 50px;
+  /*margin-top: 50px;*/
+  /*top:100px !important;*/
+}
+.line{
+  fill: none;
+    stroke: #000;
+}
+/*g.axis {
+    shape-rendering: crispEdges;
+}*/
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+}
+div#module_chart{
+  boder:solid 1px black;
+}
+div.chart-title{
+  text-align: center;
+  font-size: 25px;
+}
+div#module_chart_left{
+    width: 80%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+div#module_chart_left svg{
+  border:solid 1px  #EED5D2;
+  
+}
+div#module_chart_left .link {
+    fill: none;
+    stroke: #666;
+    stroke-width: 2px;
+}
+div#module_chart_left #licensing {
+    fill: green;
+}
+div#module_chart_left .link.licensing {
+  stroke: green;
+}
+div#module_chart_left .link.resolved {
+  stroke-dasharray: 0,2 1;
+}
+div#module_chart_left circle {
+  fill: #ccc;
+  /*stroke: #333;*/
+  /*stroke: #eed5d2;*/
+  /*stroke-width: 1.5px;*/
+}
+div#module_chart_left text {
+  font: 15px sans-serif;
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+/* module right chart */
+/*div#module_chart_right{
+  display: inline-block;
+  width: 60%;
+}
+div#module_chart_right .axis path,
+div#module_chart_right .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+div#module_chart_right .axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+div#module_chart_right .dot {
+  stroke: #000;
+}
+
+div#module_chart_right .legend {
+    padding: 5px;
+    font: 10px sans-serif;
+    background: yellow;
+    box-shadow: 2px 2px 1px #888;
+}*/
+div#module_chart_right{
+  /*display: inline-block;*/
+  width: 80%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+div#module_chart_right svg{
+  border:solid 1px  #EED5D2;
+  
+}
+div#module_chart_right text {
+  font: 10px sans-serif;
+}
+
+div#module_chart_right rect.background {
+  fill: white;
+}
+
+div#module_chart_right .axis {
+  shape-rendering: crispEdges;
+}
+
+div#module_chart_right .axis path,
+div#module_chart_right .axis line {
+  fill: none;
+  stroke: #000;
+}
+/* tuopu chart */
+div.tuopu{
+  min-height: 200px;
+}
+div#tuopu_chart svg {
+  background-color: #FFF;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+div#tuopu_chart svg:not(.active):not(.ctrl) {
+  cursor: crosshair;
+}
+
+div#tuopu_chart path.link {
+  fill: none;
+  stroke: #000;
+  stroke-width: 4px;
+  cursor: default;
+}
+
+div#tuopu_chart svg:not(.active):not(.ctrl) path.link {
+  cursor: pointer;
+}
+
+div#tuopu_chart path.link.selected {
+  stroke-dasharray: 10,2;
+}
+
+div#tuopu_chart path.link.dragline {
+  pointer-events: none;
+}
+
+div#tuopu_chart path.link.hidden {
+  stroke-width: 0;
+}
+
+div#tuopu_chart circle.node {
+  stroke-width: 1.5px;
+  cursor: pointer;
+}
+
+div#tuopu_chart circle.node.reflexive {
+  stroke: #000 !important;
+  stroke-width: 2.5px;
+}
+
+div#tuopu_chart text {
+  font: 12px sans-serif;
+  pointer-events: none;
+}
+
+div#tuopu_chart text.id {
+  text-anchor: middle;
+  font-weight: bold;
+}
+/* _index css end */

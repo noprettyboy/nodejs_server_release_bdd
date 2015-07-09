@@ -1,0 +1,76 @@
+<div id="alarm_resolve">
+    <div class="alarm-resolve">
+        <div class="alarm-resolve-title-div">
+            <span>报警处理</span>
+            <span ng-click="goBackAlarm()">X</span>
+        </div>
+        <div class="longLine"></div>
+        <form class="form-alarm-resolve">
+            <div class="alarm-detail">
+                <div class="normal-content">
+                    <div class="form-div"><span>报警id:</span><span>{{alarmDetail.alarm.id}}</span></div>
+                    <div class="form-div"><span>报警重复次数:</span><span>{{alarmDetail.alarm.alarmCount}}</span></div>
+                    <div class="form-div"><span>报警级别:</span><span>P{{alarmDetail.alarm.monitorLevel}}</span></div>
+                    <div class="form-div"><span>频道:</span><span>{{alarmDetail.alarm.channel}}</span></div>
+                    <div class="form-div"><span>报警时间:</span><span>{{alarmDetail.alarm.date}}</span></div>
+                    <div class="form-div"><span>监控名称:</span><span>{{alarmDetail.alarm.monitorName}}</span></div>
+                    <div class="form-div"><span>监控类型:</span><span>{{alarmDetail.alarm.monitorType}}</span></div>
+                    <div class="form-div"><span>监控子类型:</span><span>{{alarmDetail.alarm.subMonitorType}}</span></div>
+                    <div class="form-div"><span>query:</span><span>{{alarmDetail.alarm.query}}</span></div>
+                    <div class="form-div"><span>损失:</span><span>{{alarmDetail.alarm.loss == 0.00 ? "——" : alarmDetail.alarm.loss}}</span></div>
+                    <div class="form-reason-div unique-content">
+                        <span>问题说明:</span>
+                        <span></span>
+                        <!-- <textarea></textarea> -->
+                    </div>
+                </div>
+                <div class="shortLine"></div>
+                <div class="dynamic-content">
+                    <div class="form-dynamic-div" ng-repeat="detailItem in alarmDetail.alarm.items">
+                        <span>{{detailItem.key}}:</span>
+                        <span index="{{$index}}">{{showHtml(detailItem.value, $index)}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="shortLine"></div>
+            <div class="resolve-time-line">
+                <div class="note-div" ng-show="{{alarmResolveInfo.handleResult.alarmStatus==2 ? false : true}}">(*注:最终报警原因以关闭此报警者的处理信息为准)</div>
+                <ul class="timeline">
+                    <li class="click-li" ng-class="{0: 'alt', 1: '', 2: ''}[resolveItem.status]"  ng-repeat="resolveItem in alarmResolveInfo.handleProcess" value={{resolveItem.id}}>
+                        <div class="time">{{resolveItem.handleTime}}</div>
+                        <div class="owner">
+                            处理人:{{resolveItem.handleMan}}
+                            <!-- <span ng-show="{{resolveItem.status==2 ? true : false}}">(*且为关闭此报警者)</span> -->
+                        </div>
+                        <div class="close-person" ng-show="{{resolveItem.status==2 ? true : false}}">(*报警关闭者)</div>
+                        <div class="step"></div>
+                        <div class="content">
+                            <div class="detail-content">
+                                <div class="alarm-type">
+                                    <span>报警原因类型:</span>
+                                    <select name="alarmType" class="select-form" ng-value="setCurVal(resolveItem.alarmReasonId, resolveItem.id)">
+                                        <option value="" selected="selected">--请选择--</option>
+                                        <option ng-repeat="option in alarmResolveInfo.alarmReasonList" value={{option.id}}>{{option.alarmReason}}</option>
+                                    </select>
+                                </div>
+                                <div class="resolve-info">
+                                    <span>处理过程:</span>
+                                    <textarea class="resolve-info-input" placeholder="请详细输入处理过程" tabindex="5">{{resolveItem.handleAdvice}}</textarea>
+                                </div>
+                                <div class="resolve-action">
+                                    <button name="submit" type="submit" class="submit-to-next" ng-show="{{((($index+1)==alarmResolveInfo.handleProcess.length) || resolveItem.status!=0 || alarmResolveInfo.handleResult.alarmStatus==2) ? false : true}}" ng-click="submitToNext(resolveItem.id, 1)">提交下一步处理</button>
+                                    <button name="submit" type="submit" class="close-alarm" ng-show="{{(resolveItem.status!=0 || alarmResolveInfo.handleResult.alarmStatus==2) ? false : true}}" ng-click="closeAlarm(resolveItem.id, 2)">关闭报警</button>
+                                    <button name="submit" type="submit" class="close-alarm" ng-show="{{(resolveItem.status!=0 || alarmResolveInfo.handleResult.alarmStatus==2) ? true : false}}" ng-click="addInfo(resolveItem.id, 1)">附加信息</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="longLine"></div>
+            <div class="alarm-resolve-btn-div">
+                <button type="button" class="btn btn-sm btn-default cancel" ng-click="goBackAlarm()">取消</button>
+            </div>
+        </form>
+    </div>
+</div>

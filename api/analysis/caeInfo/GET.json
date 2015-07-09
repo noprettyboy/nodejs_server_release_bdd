@@ -1,0 +1,883 @@
+{
+    "message": "ok",
+    "success": true,
+    "data": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "KA品专PS全量展现监控",
+                                                        "productId": 1,
+                                                        "monitorTypeId": 2,
+                                                        "hasAlarm": 1
+                                                    }
+                                                ],
+                                                "name": "P0"
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "我的测试2"
+                                                    }
+                                                ],
+                                                "name": "P1"
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "乐居品专展现监控12"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "我的测试"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "KA品专PS飘红监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC中小品专飘红监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "乐居品专飘红监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "物料飘红监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "KA品专分地域死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "分地域点击跳转监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "KA品专死链监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "乐居品专死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "品专物料敏感词监控"
+                                                    }
+                                                ],
+                                                "name": "P1"
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PCKA品专Click数据监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "PCKA品专PV数据监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "广告点击数据指标监控"
+                                    }
+                                ],
+                                "name": "数据监控"
+                            }
+                        ],
+                        "name": "PCPS品专"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC图片品专展现监控"
+                                                    }
+                                                ],
+                                                "name": "P0"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC图片品专死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            }
+                        ],
+                        "name": "PC图片品专"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC图片品专高级展现监控"
+                                                    }
+                                                ],
+                                                "name": "P0"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC图片品专高级死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            }
+                        ],
+                        "name": "PC图片品专高级"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC新闻品专展现监控"
+                                                    }
+                                                ],
+                                                "name": "P0"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC新闻品专死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            }
+                        ],
+                        "name": "PC新闻品专"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "百科品专展现监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "百科品专死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            }
+                        ],
+                        "name": "PC百科品专"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC知道品专展现监控"
+                                                    }
+                                                ],
+                                                "name": "P0"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC知道品专死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            }
+                        ],
+                        "name": "PC知道品专"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC视频品专展现监控"
+                                                    }
+                                                ],
+                                                "name": "P0"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC视频品专死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            }
+                        ],
+                        "name": "PC视频品专"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "测试"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": ""
+                                    }
+                                ],
+                                "name": "监控测试"
+                            }
+                        ],
+                        "name": "无线PS中小品专"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "无线品专增量展现监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "无线品专展现监控"
+                                                    }
+                                                ],
+                                                "name": "P0"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "KA品专分地域展现监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "分地域物料展现监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "wise中小品专飘红监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "无线品专PS飘红监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "物料飘红监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "无线品专死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "无线KA品专Click数据监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "无线KA品专PV数据监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "广告点击数据指标监控"
+                                    }
+                                ],
+                                "name": "数据监控"
+                            }
+                        ],
+                        "name": "无线PS品专"
+                    }
+                ],
+                "name": "KA品专"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC中小品专增量展现监控"
+                                                    }
+                                                ],
+                                                "name": "P0"
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC中小品专展现监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC中小品专死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC中小品专Click数据监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "PC中小品专PV数据监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "广告点击数据指标监控"
+                                    }
+                                ],
+                                "name": "数据监控"
+                            }
+                        ],
+                        "name": "PCPS中小品专"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "wise中小品专增量展现监控"
+                                                    }
+                                                ],
+                                                "name": "P0"
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "wise中小品专展现监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "wise中小品专死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "wise中小品专Click数据监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "wise中小品专PV数据监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "广告点击数据指标监控"
+                                    }
+                                ],
+                                "name": "数据监控"
+                            }
+                        ],
+                        "name": "无线PS中小品专"
+                    }
+                ],
+                "name": "中小品专"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "企业百科基础词条展现监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "企业百科特型名片展现监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            }
+                        ],
+                        "name": "PC企业百科"
+                    }
+                ],
+                "name": "企业百科"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "后羿检索端PV监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "广告点击数据指标监控"
+                                    }
+                                ],
+                                "name": "数据监控"
+                            }
+                        ],
+                        "name": "后羿检索端"
+                    }
+                ],
+                "name": "后羿检索端"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "品牌起跑线分地域展现监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "分地域物料展现监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            }
+                        ],
+                        "name": "PC品牌起跑线"
+                    }
+                ],
+                "name": "品牌起跑线"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "智能品专展现监控"
+                                                    }
+                                                ],
+                                                "name": "P0"
+                                            }
+                                        ],
+                                        "name": "物料展现监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            }
+                        ],
+                        "name": "PC智能品专"
+                    }
+                ],
+                "name": "智能品专"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "知识营销CPC死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "知识营销CPC IdeaClick数据监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "知识营销CPC IdeaPv数据监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "知识营销CPC QbClick数据监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "知识营销CPC QbPV数据监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "广告点击数据指标监控"
+                                    }
+                                ],
+                                "name": "数据监控"
+                            }
+                        ],
+                        "name": "PC知识营销CPC"
+                    }
+                ],
+                "name": "知识营销CPC"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "知识营销CPT死链监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "点击跳转监控"
+                                    }
+                                ],
+                                "name": "展现监控"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "name": "知识营销CPT IdeaClick数据监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "知识营销CPT IdeaPV数据监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "知识营销CPT QbClick数据监控"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "name": "知识营销CPT QbPV数据监控"
+                                                    }
+                                                ],
+                                                "name": "P2"
+                                            }
+                                        ],
+                                        "name": "广告点击数据指标监控"
+                                    }
+                                ],
+                                "name": "数据监控"
+                            }
+                        ],
+                        "name": "PC知识营销CPT"
+                    }
+                ],
+                "name": "知识营销CPT"
+            }
+        ],
+        "name": "已有监控项拓扑图"
+    }
+}

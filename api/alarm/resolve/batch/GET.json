@@ -1,0 +1,231 @@
+{
+    "message": "ok",
+    "success": true,
+    "data": {
+        "handleProcess": [
+            {
+                "alarmId": 0,
+                "alarmReason": "",
+                "alarmReasonId": 0,
+                "handleAdvice": "",
+                "handleMan": "guijunfei",
+                "handleTime": "",
+                "id": 0,
+                "order": 0,
+                "status": 0
+            }
+        ],
+        "alarmReasonList": [
+            {
+                "alarmReason": "物料已下线",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 1
+            },
+            {
+                "alarmReason": "产品线系统问题",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 2
+            },
+            {
+                "alarmReason": "外部服务问题",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 3
+            },
+            {
+                "alarmReason": "运维问题",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 4
+            },
+            {
+                "alarmReason": "产品线自身不稳定",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 5
+            },
+            {
+                "alarmReason": "机房服务不稳定",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 6
+            },
+            {
+                "alarmReason": "节假日影响",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 7
+            },
+            {
+                "alarmReason": "突发事件",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 8
+            },
+            {
+                "alarmReason": "客户操作",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 9
+            },
+            {
+                "alarmReason": "作弊攻击",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 10
+            },
+            {
+                "alarmReason": "监控case问题",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 11
+            },
+            {
+                "alarmReason": "监控系统误报",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 12
+            },
+            {
+                "alarmReason": " 联调测试类",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 13
+            },
+            {
+                "alarmReason": "其它",
+                "gmtCreate": {
+                    "date": 11,
+                    "day": 1,
+                    "hours": 13,
+                    "minutes": 4,
+                    "month": 4,
+                    "seconds": 43,
+                    "time": 1431320683000,
+                    "timezoneOffset": -480,
+                    "year": 115
+                },
+                "id": 14
+            }
+        ]
+    }
+}

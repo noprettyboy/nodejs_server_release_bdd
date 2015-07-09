@@ -1,0 +1,255 @@
+<div id="analysis">
+    <div class="analysis">  
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading sub-title-div" role="tab" id="dataMonitor">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseDataMonitor" name="caeMonitor" ng-click="contentShowOrHide($event)">
+                        监控项状况
+                        <span name="down">∨</span>
+                        <span name="up" class="show-span">∧</span>
+                    </a>
+                </div>
+                <div id="collapseDataMonitor" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="dataMonitor">
+                    <div class="panel-body report-content-div">
+                        <div class="color-flag-div">
+                            <div>
+                                <label class="color-value"></label><label class="color-text"></label><br/>
+                                <label class="color-value"></label><label class="color-text">产品线节点</label><br/>
+                                <label class="color-value"></label><label class="color-text">频道节点</label><br/>
+                                <label class="color-value"></label><label class="color-text">监控类型节点</label><br/>
+                                <label class="color-value"></label><label class="color-text">监控子类型节点</label><br/>
+                                <label class="color-value"></label><label class="color-text">监控级别节点</label><br/>
+                                <label class="color-value"></label><label class="color-text">正常监控项节点</label><br/>
+                                <label class="color-value"></label><label class="color-text">有报警监控项节点</label>
+                            </div>
+                        </div>
+                        <div class="data-monitor-chart">
+                            <div class="mindmap node-div">
+                                <div class="node node_root node-level0">
+                                    <div class="node__text">{{nodes.name}}</div>
+                                </div> 
+                                <ol class="children children_rightbranch">
+                                    <li class="children__item" ng-repeat="itemI in nodes.children">
+                                        <div class="node node-level1">
+                                            <div class="node-text">{{itemI.name}}</div>
+                                        </div>
+                                        <ol class="children" ng-show="itemI.children.length">
+                                            <li class="children__item" ng-repeat="itemII in itemI.children">
+                                                <div class="node  node-level2">
+                                                    <div class="node__text">{{itemII.name}}</div>
+                                                </div>
+                                                <ol class="children" ng-show="itemII.children.length">
+                                                    <li class="children__item" ng-repeat="itemIII in itemII.children">
+                                                        <div class="node  node-level3">
+                                                            <div class="node__text">{{itemIII.name}}</div>
+                                                        </div>
+                                                        <ol class="children" ng-show="itemIII.children.length">
+                                                            <li class="children__item" ng-repeat="itemIIII in itemIII.children">
+                                                                <div class="node  node-level4">
+                                                                    <div class="node__text">{{itemIIII.name}}</div>
+                                                                </div>
+                                                                <ol class="children" ng-show="itemIIII.children.length">
+                                                                    <li class="children__item" ng-repeat="itemIIIII in itemIIII.children">
+                                                                        <div class="node  node-level5">
+                                                                            <div class="node__text">{{itemIIIII.name}}</div>
+                                                                        </div>
+                                                                        <ol class="children" ng-show="itemIIIII.children.length">
+                                                                            <li class="children__item" ng-repeat="itemIIIIII in itemIIIII.children">
+                                                                                <div class="node node-level6" ng-class="{1: 'alarm-color', 0: ''}[itemIIIIII.hasAlarm]" ng-click="toAlarmPage(itemIIIIII.productId, itemIIIIII.monitorTypeId)">
+                                                                                    <div class="node-text">{{itemIIIIII.name}}</div>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ol>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </li>                               
+                                </ol>
+                            </div>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading sub-title-div" role="tab" id="dataAll">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseDataAll" name="all" ng-click="contentShowOrHide($event)">
+                        整体监控项数目和报警数目统计
+                        <span name="down" class="show-span">∨</span>
+                        <span name="up">∧</span>
+                    </a>
+                </div>
+                <div id="collapseDataAll" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dataAll">
+                    <div class="panel-body report-content-div">
+                        <div class="filter-condition-div">
+                            <span>时间区间:</span>
+                            <input type="text" class="form-control hasDatepicker" name="timeBegin" id="search_begin_time_all" placeholder="开始时间">
+                            <span name="jiangefu">--</span>
+                            <input type="text" class="form-control hasDatepicker" name="timeEnd" id="search_end_time_all" placeholder="结束时间">
+                            <input class="form-control btn btn-default-style search-btn" type="submit" ng-click="searchData('all')" onfocus="this.blur();" value="查询">
+                        </div>
+                        <div class="data-all-chart" id="data_all_chart">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading sub-title-div" role="tab" id="dataByProduct">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseDataByProduct" name="byProduct" ng-click="contentShowOrHide($event)">
+                        各产品线报警数量汇总
+                        <span name="down" class="show-span">∨</span>
+                        <span name="up">∧</span>
+                    </a>
+                </div>
+                <div id="collapseDataByProduct" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dataByProduct">
+                    <div class="panel-body report-content-div">
+                        <div class="filter-condition-div">
+                            <span>时间区间:</span>
+                            <input type="text" class="form-control hasDatepicker" name="timeBegin" id="search_begin_time_product" placeholder="开始时间">
+                            <span name="jiangefu">--</span>
+                            <input type="text" class="form-control hasDatepicker" name="timeEnd" id="search_end_time_product" placeholder="结束时间">
+                            <input class="form-control btn btn-default-style search-btn" type="submit" ng-click="searchData('product')" onfocus="this.blur();" value="查询">
+                        </div>
+                        <div class="data-by-product-chart" id="data_by_product_chart">
+
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="panel panel-default">
+                <div class="panel-heading sub-title-div" role="tab" id="dataByMonitor">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseDataByMonitor" name="byMonitor" ng-click="contentShowOrHide($event)">
+                        各监控项报警数量统计
+                        <span name="down" class="show-span">∨</span>
+                        <span name="up">∧</span>
+                    </a>
+                </div>
+                <div id="collapseDataByMonitor" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dataByMonitor">
+                    <div class="panel-body report-content-div">
+                        <div class="filter-condition-div">
+                            <span>时间区间:</span>
+                            <input type="text" class="form-control hasDatepicker" name="timeBegin" id="search_begin_time_monitor" placeholder="开始时间">
+                            <span name="jiangefu">--</span>
+                            <input type="text" class="form-control hasDatepicker" name="timeEnd" id="search_end_time_monitor" placeholder="结束时间">
+                            <input class="form-control btn btn-default-style search-btn" type="submit" ng-click="searchData('monitor')" onfocus="this.blur();" value="查询">
+                        </div>
+                        <div class="data-by-monitor-chart" id="data_by_monitor_chart">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="panel panel-default">
+                <div class="panel-heading sub-title-div" role="tab" id="dataByAll">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseDataByAll" name="byAll" ng-click="contentShowOrHide($event)">
+                        分产品线分频道分类型分级别汇总
+                        <span name="down" class="show-span">∨</span>
+                        <span name="up">∧</span>
+                    </a>
+                </div>
+                <div id="collapseDataByAll" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dataByAll">
+                    <div class="panel-body report-content-div">
+                        <div class="filter-condition-div">
+                            <span>产品线:</span>
+                            <select id="product_select">
+                                <option value="1" selected="selected">KA品专</option>
+                                <option value="2">中小品专</option>
+                                <option value="15">智能品专</option>
+                                <option value="3">品牌华表</option>
+                                <option value="14">商业阿拉丁</option>
+                                <option value="4">品牌起跑线</option>
+                                <option value="8">企业百科</option>
+                                <option value="7">问答营销</option>
+                                <option value="16">知识营销cpc</option>
+                                <option value="5">知识营销cpt</option>
+                                <option value="6">图腾</option>
+                                <option value="17">百度知识</option>
+                                <option value="9">后裔检索</option>
+                                <option value="10">商业阿拉丁检索</option>
+                                <option value="12">图+检索</option>
+                                <option value="13">智能品专检索</option>
+                                <option value="11">知识营销cpc检索</option>
+                                <option value="18">知识营销cpt检索</option>
+                                <option value="19">rcv2检索</option>
+                            </select>
+                            <span>频道:</span>
+                            <select id="channel_select" >
+                                <option value="" selected="selected">所有</option>
+                                <option ng-repeat="monitorChannelItem in monitorChannels" value={{monitorChannelItem.id}} name={{monitorChannelItem.name}}>{{monitorChannelItem.name}}</option>
+                            </select>
+                            <span>监控类型:</span>
+                            <select id="monitor_type_select">
+                                <option value="">所有</option>
+                                <option value="1">展现类监控</option>
+                                <option value="2">数据类监控</option>
+                                <option value="3">体验类监控</option>                                
+                            </select>
+                            <span>监控级别:</span>
+                            <select id="monitor_level_select">
+                                <option value="">所有</option>
+                                <option value="0">p0</option>
+                                <option value="1">p1</option>
+                                <option value="2">p2</option>
+                            </select>
+                            <br>
+                            <span>时间区间:</span>
+                            <input type="text" class="form-control hasDatepicker" name="timeBegin" id="search_begin_time_byall" placeholder="开始时间">
+                            <span name="jiangefu">--</span>
+                            <input type="text" class="form-control hasDatepicker" name="timeEnd" id="search_end_time_byall" placeholder="结束时间">
+                            <input class="form-control btn btn-default-style search-btn" type="submit" ng-click="searchData('byall')" onfocus="this.blur();" value="查询">
+                        </div>
+                        <div class="data-by-all-chart" id="data_by_all_chart">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="panel panel-default">
+                <div class="panel-heading sub-title-div" role="tab" id="dataAlarmType">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseDataAlarmType" name="alarmType" ng-click="contentShowOrHide($event)">
+                        报警分析
+                        <span name="down" class="show-span">∨</span>
+                        <span name="up">∧</span>
+                    </a>
+                </div>
+                <div id="collapseDataAlarmType" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dataAlarmType">
+                    <div class="panel-body report-content-div">
+                        <div class="filter-condition-div">
+                            <span>产品线:</span>
+                            <select id="product_select_alarm">
+                                <option value="1" selected="selected">KA品专</option>
+                                <option value="2">中小品专</option>
+                                <option value="15">智能品专</option>
+                                <option value="3">品牌华表</option>
+                                <option value="14">商业阿拉丁</option>
+                                <option value="4">品牌起跑线</option>
+                                <option value="8">企业百科</option>
+                                <option value="7">问答营销</option>
+                                <option value="16">知识营销cpc</option>
+                                <option value="5">知识营销cpt</option>
+                                <option value="6">图腾</option>
+                                <option value="17">百度知识</option>
+                                <option value="9">后裔检索</option>
+                                <option value="10">商业阿拉丁检索</option>
+                                <option value="12">图+检索</option>
+                                <option value="13">智能品专检索</option>
+                                <option value="11">知识营销cpc检索</option>
+                                <option value="18">知识营销cpt检索</option>
+                                <option value="19">rcv2检索</option>
+                            </select>
+                            <input class="form-control btn btn-default-style search-btn" type="submit" ng-click="searchData('alarm')" onfocus="this.blur();" value="查询">
+                        </div>
+                        <div class="data-alarm-type-chart" id="data_alarm_type_chart">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>
